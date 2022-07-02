@@ -17,8 +17,5 @@ def search():
     return faces_ids
 
 
-def add_face():
-
-
 if __name__ == '__main__':
     app.run(debug=True, port=9088, host='0.0.0.0')
