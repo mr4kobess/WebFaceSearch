@@ -1,16 +1,7 @@
-import os
-import json
-import math
-import glob
 import numpy as np
-import cv2
-import time
-import pandas as pd
-import re
-import pickle
-import shutil
 from face_scan import FaceScan
 from index import Index
+import config
 
 
 class FindFace:
@@ -39,7 +30,7 @@ class FindFace:
 
 
 
-facescan = FaceScan(detector_name='mtcnn')
-index = Index(new=False, klusters=512, n_probe=16, path_to_index_dir='/run/media/mansur/My Data/Загрузки/index')
+facescan = FaceScan(detector_name=config.detector_name, model_name=config.model_name)
+index = Index(new=False, klusters=config.klusters, n_probe=config.n_probe, path_to_index_dir=config.path_to_index_dir)
 
 findface = FindFace(index=index, face_scan=facescan)
